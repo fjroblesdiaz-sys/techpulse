@@ -118,7 +118,7 @@ export default function BillingPage() {
               </ul>
               <Button
                 className="w-full mt-6"
-                variant={plan.id === currentPlan ? "outline" : "default"}
+                variant={plan.id === currentPlan ? "outline" : "secondary"}
                 disabled={plan.id === currentPlan || processing}
                 onClick={() => handleUpgrade(plan.id)}
               >
