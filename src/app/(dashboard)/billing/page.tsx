@@ -103,8 +103,8 @@ export default function BillingPage() {
                 <CardTitle>{plan.name}</CardTitle>
               </div>
               <div className="pt-2">
-                <span className="text-4xl font-bold text-white">${plan.price}</span>
-                {plan.price > 0 && <span className="text-slate-400">/month</span>}
+                <span className="text-4xl font-bold text-white">${plan.price ?? 0}</span>
+                {(plan.price ?? 0) > 0 && <span className="text-slate-400">/month</span>}
               </div>
             </CardHeader>
             <CardContent>
