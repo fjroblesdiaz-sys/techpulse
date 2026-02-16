@@ -221,7 +221,7 @@ export default function DashboardPage() {
     });
   }
 
-  if (githubData?.repos?.length > 0) {
+  if (githubData?.repos && githubData.repos.length > 0) {
     insights.push({
       title: `${githubData.repos.length} repositories tracked`,
       description: "Monitoring activity across all your repositories.",
@@ -334,7 +334,6 @@ export default function DashboardPage() {
                     title={insight.title}
                     description={insight.description}
                     severity={insight.severity}
-                    action={insight.action}
                   />
                 ))
               ) : (

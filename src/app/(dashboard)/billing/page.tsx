@@ -204,7 +204,7 @@ export default function BillingPage() {
                 <p className="text-sm font-medium text-slate-200">Cancel Subscription</p>
                 <p className="text-xs text-slate-400">You will lose access to premium features</p>
               </div>
-              <Button variant="destructive" size="sm" onClick={handleCancelSubscription}>
+              <Button variant="danger" size="sm" onClick={handleCancelSubscription}>
                 Cancel
               </Button>
             </div>

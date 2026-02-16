@@ -3,6 +3,7 @@ const GITHUB_API_BASE = "https://api.github.com";
 export interface GitHubRepo {
   id: number;
   name: string;
+  owner: string;
   full_name: string;
   private: boolean;
   html_url: string;
