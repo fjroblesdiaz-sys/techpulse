@@ -14,22 +14,13 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    async jwt({ token, account, trigger, session }) {
-      console.log("JWT Callback - Account:", account ? "present" : "none");
-      console.log("JWT Callback - Token before:", Object.keys(token));
-      
+    async jwt({ token, account }) {
       if (account) {
         token.accessToken = account.access_token;
-        console.log("JWT Callback - Added accessToken");
       }
-      
-      console.log("JWT Callback - Token after:", Object.keys(token));
       return token;
     },
     async session({ session, token }) {
-      console.log("Session Callback - Token:", Object.keys(token));
-      console.log("Session Callback - Has accessToken:", !!token.accessToken);
-      
       if (session.user) {
         session.user.id = token.sub as string;
       }
@@ -43,7 +34,6 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
-  debug: true,
 };
 
 const handler = NextAuth(authOptions);
